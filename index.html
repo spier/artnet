@@ -1,6 +1,24 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>JEvent ArtNet Calculator</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
     <script charset="utf-8">
         function calc(){
             var hexString = document.getElementById("hex").value;
@@ -18,17 +36,35 @@
         }
     </script>
   </head>
-  <body>
-    <h1>JEvent ArtNet Calculator</h1>
+  <body role="document">
 
-    <h3>Hex Subnet + Universe</h3>
-    <input type="text" id="hex" />
-    <input type="button" value="Calc" onClick="calc()" />
+    <div class="container">
 
-    <h3>Decimal ("Schnick-Schnack-Systems")</h3>
-    <input type="text" id="dec1" />
+      <h2>JEvent ArtNet Calculator</h1>
 
-    <h3>Decimal ("MA-Lighting Numbering")</h3>
-    <input type="text" id="dec2" />
+      <label for="hex">Hex Subnet + Universe</label>
+
+      <div class="form-inline form-group">
+        <input type="text" id="hex" class="form-control" placeholder="Enter hex value"/>
+        <button type="button" class="btn btn-primary" onClick="calc()">Calculate!</button>
+      </div>
+
+      <div class="form-group">
+        <label for="dec1">Decimal ("Schnick-Schnack-Systems")</label>
+        <input type="text" id="dec1" class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label for="dec1">Decimal ("MA-Lighting Numbering")</label>
+        <input type="text" id="dec2" class="form-control" />
+      </div>
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   </body>
 </html>
