@@ -20,19 +20,28 @@
     <![endif]-->
 
     <script charset="utf-8">
-        function calc(){
+        function fromHex(){
             var hexString = document.getElementById("hex").value;
             var decimal = parseInt(hexString, 16);
-            // window.alert(hexString);
-            // window.alert(decimal);
 
-            document.getElementById("dec1").value = decimal;
-            document.getElementById("dec2").value = decimal + 1;
+            document.getElementById("dec0").value = decimal;
+            document.getElementById("dec1").value = decimal + 1;
         }
 
-        function decimalToHex(){
-          // see http://stackoverflow.com/questions/57803/how-to-convert-decimal-to-hex-in-javascript
-            // hexString = yourNumber.toString(16);
+        function fromDec0(){
+          var decimal = parseInt(document.getElementById("dec0").value,10);
+          var hex = decimal.toString(16).toUpperCase();
+
+          document.getElementById("hex").value = hex;
+          document.getElementById("dec1").value = decimal + 1;
+        }
+
+        function fromDec1(){
+          var decimal = parseInt(document.getElementById("dec1").value,10);
+          var hex = (decimal - 1).toString(16).toUpperCase();
+
+          document.getElementById("hex").value = hex;
+          document.getElementById("dec0").value = decimal - 1;
         }
     </script>
   </head>
@@ -43,20 +52,21 @@
       <h2>JEvent ArtNet Calculator</h1>
 
       <label for="hex">Hex Subnet + Universe</label>
-
       <div class="form-inline form-group">
         <input type="text" id="hex" class="form-control" placeholder="Enter hex value"/>
-        <button type="button" class="btn btn-primary" onClick="calc()">Calculate!</button>
+        <button type="button" class="btn btn-primary" onClick="fromHex()">Convert</button>
       </div>
 
-      <div class="form-group">
-        <label for="dec1">Decimal ("Schnick-Schnack-Systems")</label>
-        <input type="text" id="dec1" class="form-control" />
+      <label for="dec0">Decimal Start 0</label>
+      <div class="form-inline form-group">
+        <input type="text" id="dec0" class="form-control" placeholder="Enter decimal value"/>
+        <button type="button" class="btn btn-primary" onClick="fromDec0()">Convert</button>
       </div>
 
-      <div class="form-group">
-        <label for="dec1">Decimal ("MA-Lighting Numbering")</label>
-        <input type="text" id="dec2" class="form-control" />
+      <label for="dec1">Decimal Start 1</label>
+      <div class="form-inline form-group">
+        <input type="text" id="dec1" class="form-control" placeholder="Enter decimal value"/>
+        <button type="button" class="btn btn-primary" onClick="fromDec1()">Convert</button>
       </div>
 
     </div>
