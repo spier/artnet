@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>JEvent ArtNet Calculator</title>
+    <script charset="utf-8">
+        function calc(){
+            var hexString = document.getElementById("hex").value;
+            var decimal = parseInt(hexString, 16);
+            // window.alert(hexString);
+            // window.alert(decimal);
+
+            document.getElementById("dec1").value = decimal;
+            document.getElementById("dec2").value = decimal + 1;
+        }
+
+        function decimalToHex(){
+          // see http://stackoverflow.com/questions/57803/how-to-convert-decimal-to-hex-in-javascript
+            // hexString = yourNumber.toString(16);
+        }
+    </script>
+  </head>
+  <body>
+    <h1>JEvent ArtNet Calculator</h1>
+
+    <h3>Hex Subnet + Universe</h3>
+    <input type="text" id="hex" />
+    <input type="button" value="Calc" onClick="calc()" />
+
+    <h3>Decimal ("Schnick-Schnack-Systems")</h3>
+    <input type="text" id="dec1" />
+
+    <h3>Decimal ("MA-Lighting Numbering")</h3>
+    <input type="text" id="dec2" />
+  </body>
+</html>
